@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe4f1, #e4e8ff, #d8f0ff);
+  color: #25243a;
+}
+
+/* Main website container */
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  padding: 35px 20px 30px;
+}
+
+/* Logo */
+
+header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #ff4f9a,
+    #8b5cf6,
+    #4f8cff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Small subtitle */
+
+header::after {
+  content: "Discover beautiful images from around the world ✨";
+  display: block;
+  color: #6f6b86;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+/* Search form */
+
+#search-form {
+  display: flex;
+  gap: 12px;
+  max-width: 750px;
+  margin: 30px auto 20px;
+}
+
+/* Search input */
+
+#search-input {
+  flex: 1;
+  padding: 16px 22px;
+
+  border: 2px solid rgba(255, 105, 180, 0.25);
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #333;
+  font-size: 16px;
+
+  outline: none;
+
+  box-shadow: 0 8px 25px rgba(108, 92, 231, 0.12);
+
+  transition: 0.3s;
+}
+
+#search-input:focus {
+  border-color: #9b7cff;
+
+  box-shadow:
+    0 0 0 4px rgba(155, 124, 255, 0.15),
+    0 8px 25px rgba(108, 92, 231, 0.15);
+}
+
+#search-input::placeholder {
+  color: #9994aa;
+}
+
+/* Search button */
+
+#search-form button {
+  padding: 0 28px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #ff5ca8,
+    #9b6cff,
+    #5c8dff
+  );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+
+  transition: 0.3s;
+}
+
+#search-form button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(139, 92, 246, 0.35);
+}
+
+/* Status text */
+
+#status {
+  text-align: center;
+
+  margin: 25px 0;
+
+  color: #625d78;
+
+  font-size: 15px;
+}
+
+/* Image grid */
+
+#results {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(220px, 1fr));
+
+  gap: 22px;
+
+  padding-bottom: 40px;
+}
+
+/* Image card */
+
+#results article {
+  background: rgba(255, 255, 255, 0.8);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(90, 80, 150, 0.15);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Card hover */
+
+#results article:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 18px 35px rgba(90, 80, 150, 0.25);
+}
+
+/* Images */
+
+#results article img {
+  width: 100%;
+
+  height: 210px;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.4s ease;
+}
+
+/* Image zoom */
+
+#results article:hover img {
+  transform: scale(1.04);
+}
+
+/* Card title */
+
+#results article h3 {
+  padding: 14px 14px 5px;
+
+  font-size: 16px;
+
+  font-weight: 650;
+
+  color: #292640;
+
+  line-height: 1.4;
+}
+
+/* Creator */
+
+#results article p {
+  padding: 0 14px 15px;
+
+  font-size: 13px;
+
+  color: #827c99;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 38px;
+  }
+
+  #search-form {
+    flex-direction: column;
+  }
+
+  #search-input {
+    width: 100%;
+  }
+
+  #search-form button {
+    height: 50px;
+  }
+
+  #results {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+  #results article img {
+    height: 160px;
+  }
+}
